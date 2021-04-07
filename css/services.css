@@ -1,0 +1,206 @@
+* {
+  font-family: "Roboto Slab", serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navbar start here */
+.menu {
+  background-color: #202731;
+  z-index: 1000;
+  height: 4rem;
+
+  position: sticky;
+  top: 0;
+}
+ol {
+  list-style-type: none;
+  margin-left: 450px;
+}
+.menu > ol {
+  max-height: 1000px;
+  padding: 0 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-brand {
+  color: #00a78e !important;
+  font-family: "Pacifico", cursive;
+  font-size: 23px;
+  font-weight: bold;
+  padding-left: 80px;
+}
+.menu .navbar-brand {
+  margin-top: 10px;
+  flex: 0.2;
+  float: left;
+}
+.menu > ol > .menu-item {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+nav a {
+  color: #00a78e;
+}
+nav a:hover {
+  color: #fff;
+}
+.dropdown {
+  margin-top: 20px;
+  margin-left: 30px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #00a78e;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #333;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #00a78e;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/************* Navbar end here *******************************/
+/* services section start here */
+.services {
+  min-height: 200px;
+  background-color: #fff;
+}
+.services h2 {
+  margin-top: 10px;
+  font-size: 3.5rem;
+  text-align: center;
+  color: #00a78e;
+}
+.services h5:hover {
+  color: #80b435;
+}
+
+.services_container {
+  justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 35px;
+  margin: 50px 0 70px;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.service1,
+.service2,
+.service3,
+.service4 {
+  flex: 0.2;
+  text-align: center;
+}
+
+.item {
+  padding: 40px;
+}
+
+/* services section end here */
+
+/********************* Footer section start here ***********************/
+
+.footer_section {
+  min-height: 200px;
+  background-color: #202731;
+  color: #fff;
+}
+.footer_top {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 40px;
+}
+.copyright {
+  flex: 0.6;
+}
+.copyright a {
+  color: #008e79;
+}
+.countries {
+  flex: 0.3;
+}
+.countries img {
+  float: right;
+}
+.country_name {
+  color: #fff;
+  float: right;
+}
+.footer_bottom {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px;
+}
+.footer_menu {
+  flex: 0.6;
+}
+.footer_menu ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+.footer_menu ul li {
+  margin-left: 40px;
+  list-style-type: none;
+}
+.footer_menu ul li a {
+  color: #fff;
+}
+.social_icon {
+  flex: 0.4;
+  margin-right: 100px;
+}
+.social_icon i {
+  color: #008e79;
+  float: right;
+  border: 2px solid #008e79;
+  padding: 10px;
+  margin: 4px;
+}
+.social_icon i:hover {
+  color: #fff;
+}
+
+/********************* Footer section end here ***********************/
