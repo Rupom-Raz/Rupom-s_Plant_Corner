@@ -51,7 +51,6 @@ ol {
 
 nav a {
   color: #00a78e;
-  
 }
 nav a:hover {
   color: #fff;
@@ -104,17 +103,16 @@ nav a:hover {
   display: block;
 }
 
-.fa-shopping-cart{
-  color:#008e79;
+.fa-shopping-cart {
+  color: #008e79;
   margin-top: 23px;
 }
-#cart_number{
+#cart_number {
   color: #008e79;
   font-weight: 700;
   margin-top: 22px;
   margin-left: 7px;
 }
-
 
 /* Navbar end here */
 /*********************** Home page section start here **************/
@@ -217,7 +215,7 @@ nav a:hover {
   transform: rotate(360deg);
   transition: all 1s;
 }
-/* side bar end here */
+/************************* side bar end here ********************/
 
 .hero_section {
   flex: 1;
@@ -270,7 +268,7 @@ nav a:hover {
   transition: 0.5s ease;
   text-transform: uppercase;
 }
-.home_btn  a{
+.home_btn a {
   color: #fff;
 }
 .home_btn:hover {
@@ -326,6 +324,50 @@ nav a:hover {
 }
 
 /************************************* about section end here ******************************/
+
+/***************** Plants gellery start here *******************/
+.gallery_sec {
+  min-height: 500px;
+}
+.gallery_sec h3 {
+  margin-top: 20px;
+
+  font-size: 3.5rem;
+  text-align: center;
+  color: #00a78e;
+  text-transform: uppercase;
+}
+.gallery_container {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 5px;
+  grid-auto-flow: dense;
+  overflow: hidden;
+}
+.gallery_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease-in-out;
+}
+.gallery_container img:hover {
+  transform: scale(1.5);
+}
+
+.land {
+  grid-column: span 2;
+}
+.ver {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+.huge {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/***************** Plants gellery end here *******************/
 
 /* services section start here */
 .services {
