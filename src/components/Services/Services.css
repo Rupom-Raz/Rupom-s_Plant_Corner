@@ -1,0 +1,70 @@
+.services {
+  min-height: 400px;
+  background-color: #fff;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.services h2 {
+  font-weight: 700;
+  margin-top: 10px;
+  font-size: 3.5rem;
+  text-align: center;
+  color: #00a78e;
+}
+.services h5:hover {
+  color: #80b435;
+}
+.service1,
+.service2,
+.service3,
+.service4 {
+    
+  padding: 50px;
+  margin: 30px;
+  border-radius: 48px;
+  background: #e0e0e0;
+  box-shadow: 5px 5px 8px #afafaf, -5px -5px 8px #ffffff;
+}
+
+/* // Medium Device (Tablet) */
+@media (max-width: 991px) {
+   
+    .service1,
+    .service2,
+    .service3,
+    .service4 {
+      padding: 50px ;
+      margin:  10px 0px 10px 60px;
+      border-radius: 48px;
+      background: #e0e0e0;
+      box-shadow: 5px 5px 8px #afafaf, -5px -5px 8px #ffffff;
+    }
+}
+
+/* // Small Device (Landscape Phone) */
+@media (max-width: 767px) {
+    .service1,
+    .service2,
+    .service3,
+    .service4 {
+      padding: 50px;
+      margin:  10px 0px 10px 60px;
+      border-radius: 48px;
+      background: #e0e0e0;
+      box-shadow: 5px 5px 8px #afafaf, -5px -5px 8px #ffffff;
+    }
+}
+
+/* // Extra small Device (Portrait Phone) */
+@media (max-width: 575px) {
+  .service1,
+  .service2,
+  .service3,
+  .service4 {
+    padding: 50px;
+    margin:  10px 0px 10px 60px;
+    border-radius: 48px;
+    background: #e0e0e0;
+    box-shadow: 5px 5px 8px #afafaf, -5px -5px 8px #ffffff;
+  }
+}

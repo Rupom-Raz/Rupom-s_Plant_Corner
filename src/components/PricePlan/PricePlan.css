@@ -1,0 +1,225 @@
+/* Price Plan section start here */
+.price_plan {
+  min-height: 600px;
+}
+.price_plan h3 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 3.5rem;
+  text-align: center;
+  color: #00a78e;
+  font-weight: 700;
+}
+
+.single_price {
+  margin-bottom: 30px;
+  margin-left: 90px;
+  border: 3px solid #5d4e65;
+  min-height: 400px;
+  padding: 3rem;
+  position: relative;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.single_price:hover {
+  background-color: #fff;
+  border-top: 2px solid #ec7a37;
+  border-bottom: 2px solid #ff4f69;
+  box-shadow: 0px 0px 10px 0px #323232;
+  transform: scale(1.025);
+  z-index: 2;
+}
+.single_price:hover:before,
+.single_price:hover:after {
+  content: "";
+  position: absolute;
+  background-color: #f67d35;
+  bottom: -2px;
+  width: 2px;
+}
+.single_price:hover:before {
+  left: -2px;
+}
+.single_price:hover:after {
+  right: -2px;
+}
+.single_price:hover .button {
+  background-color: #202731;
+  color: #00a78e;
+}
+
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0 0 0.5em;
+}
+
+h3 {
+  font-size: 1.5em;
+  letter-spacing: 0.0625em;
+  margin: 0 0 0.3em;
+}
+
+p {
+  font-size: 0.875em;
+}
+
+p,
+ul {
+  margin: 0 0 1.5em;
+}
+
+ul {
+  color: #796583;
+  font-size: 0.75em;
+  list-style-type: none;
+  padding: 0;
+}
+ul li {
+  margin: 0 0 0.83em;
+}
+
+.button {
+  background-color: #00a78e;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0.75em 1.5em;
+  position: absolute;
+  bottom: 1.25em;
+  left: 50%;
+  margin-left: -60px;
+  text-decoration: none;
+  width: 120px;
+}
+
+.uppercase,
+.button,
+h2 {
+  text-transform: uppercase;
+}
+
+sup,
+.small {
+  font-size: 0.6125em;
+}
+/* // Large Device (Desktop) */
+@media (max-width: 1199px) {
+  .single_price {
+    margin-bottom: 30px;
+    margin-left: 10px;
+    border: 3px solid #5d4e65;
+    min-height: 400px;
+    padding: 3rem;
+    position: relative;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+/* // Medium Device (Tablet) */
+@media (max-width: 991px) {
+  .single_price {
+    margin-bottom: 30px;
+    margin-left: 0px;
+    border: 3px solid #5d4e65;
+    min-height: 400px;
+    padding: 1.5rem;
+    position: relative;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+/* // Small Device (Landscape Phone) */
+@media (max-width: 767px) {
+  .single_price {
+    width: 100%;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    border: 3px solid #5d4e65;
+    min-height: 450px;
+    padding: 3rem;
+    position: relative;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+  }
+  h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0 0 0.5em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    letter-spacing: 0.0625em;
+    margin: 0 0 0.3em;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
+  ul {
+    color: #00a78e;
+    font-weight: 700;
+    font-size: 1em;
+    list-style-type: none;
+    padding: 0;
+  }
+}
+
+/* // Extra small Device (Portrait Phone) */
+@media (max-width: 575px) {
+  .price_plan h3 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #00a78e;
+    font-weight: 700;
+  }
+  .single_price {
+    width: 90%;
+    margin-bottom: 30px;
+    margin-left: 25px;
+    border: 3px solid #5d4e65;
+    min-height: 450px;
+    padding: 3rem;
+    position: relative;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+  }
+  h2 {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0 0 0.5em;
+    
+  }
+
+  h3 {
+    font-size: 1em;
+    letter-spacing: 0.0625em;
+    margin: 0 0 0.3em;
+    
+  }
+
+  p {
+    font-size: 1.4em;
+  }
+  ul {
+    color: #00a78e;
+    font-weight: 700;
+    font-size: .75em;
+    list-style-type: none;
+    padding: 0;
+  }
+}
