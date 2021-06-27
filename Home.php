@@ -1,3 +1,14 @@
+<?php
+session_start();
+if (isset($_SESSION['name'])) {
+} else {
+    echo"<script>alert('Login frist to access home')</script>";
+    echo"<script>location.href='../HTML/Login.php'</script>";
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +16,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
   <!-- -----------Font Css------- -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link
@@ -17,19 +29,22 @@
   <!-- My CSS -->
   <link rel="stylesheet" href="./css/home.css" />
 
-  <title>Rupom Raz </title>
+
+  <?php echo "<title>".'Hi,'.$_SESSION['name']."</title>" ?>;
+  </title>
 </head>
 
 <body>
   <!------------------- Navbar Start From Here ------------------------>
   <nav class="menu">
-    <a class="navbar-brand" href="./Home.html">Rupom's Plant Corner</a>
+    <a class="navbar-brand" href="./Home.php"><?php echo $_SESSION['name']?>'s Plant Corner</a>
+
     <ol>
-      <li class="menu-item"><a href="./Home.html">Home</a></li>
-      <li class="menu-item"><a href="./HTML/About.html">About</a></li>
+      <li class="menu-item"><a href="./Home.php">Home</a></li>
+      <li class="menu-item"><a href="./HTML/About.php">About</a></li>
 
       <div class="dropdown">
-        <a class="dropbtn" href="./HTML/Services.html">Services
+        <a class="dropbtn" href="./HTML/Services.php">Services
           <i class="fa fa-caret-down"></i>
         </a>
         <div class="dropdown-content">
@@ -39,10 +54,24 @@
         </div>
       </div>
 
-      <li class="menu-item"><a href="./HTML/PricePlan.html">Price Plan</a></li>
-      <li class="menu-item"><a href="./HTML/contact.html">Contact</a></li>
-      <li class="menu-item"><a href="./HTML/Registration.html">Registration</a></li>
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i><span id="cart_number">0</span>
+      <li class="menu-item"><a href="./HTML/PricePlan.php">Price Plan</a></li>
+      <li class="menu-item"><a href="./crud/crud_index.php">Add Plants</a></li>
+      <li class="menu-item"><a href="./HTML/contact.php">Contact</a></li>
+      <li class="menu-item"><a href="./HTML/Registration.php">Registration</a></li>
+      <li class="menu-item"><a href="./HTML/Logout.php"><input
+            style="padding: 5px; color: #fff; background-color: #008e79; border: none; cursor: pointer;" type="button"
+            value="Logout" name="logout"></a></li>
+            <?php
+            $count = 0;
+            if(isset($_SESSION['cart'])){
+              $count = count($_SESSION['cart']);
+
+            }
+            
+            ?>
+      <i onclick="location.href = './cart/cart.php'" class="fa fa-shopping-cart" aria-hidden="true"></i>
+      <span
+        onclick="location.href = './cart/cart.php'" id="cart_number"><?php echo $count ?></span>
     </ol>
 
   </nav>
@@ -64,14 +93,14 @@
     <!-- Sidebar end here--------------- -->
     <div class="hero_section">
       <h1 class="hey">Hey there, I'm </h1>
-      <span class="name">Rupom Raz</span><br>
+      <?php echo "<span class='name'>".$_SESSION['name']."</span><br>" ?>;
       <span class="profession">A Plant Lover guy,who loves plants for their own sake and knows how to cherish
         them</span>
       <p>
         Green is the prime color of the world,And that from which it's loveliness arises <br> <span
           class="qoute_owner">- Pedro Calderon </span>
       </p>
-      <button class="home_btn"><a href="./HTML/contact.html">Contact Us</a></button>
+      <button class="home_btn"><a href="./HTML/contact.php">Contact Us</a></button>
       <div class="overlay"></div>
     </div>
   </section>
@@ -103,24 +132,25 @@
     <h3>Our Plant's Gallery</h3>
     <div class="gallery_container">
       <div><img src="./image/plants image/sqr1.jpeg" alt=""></div>
-      <div><img src="./image/plants image/sqr2.jpeg" alt=""></div>
       <div class="ver"><img src="./image/plants image/ver1.jpeg" alt=""></div>
+      <div><img src="./image/plants image/sqr2.jpeg" alt=""></div>
       <div class="land"><img src="./image/plants image/land1.jpeg" alt=""></div>
       <div><img src="./image/plants image/sqr3.jpeg" alt=""></div>
-      <div><img src="./image/plants image/sqr4.jpeg" alt=""></div>
       <div class="huge"><img src="./image/plants image/huge_land.jpeg" alt=""></div>
+      <div><img src="./image/plants image/sqr4.jpeg" alt=""></div>
       <div class="ver"><img src="./image/plants image/ver3.jpeg" alt=""></div>
       <div class="ver"><img src="./image/plants image/ver4.jpeg" alt=""></div>
       <div class="land"><img src="./image/plants image/land2.jpeg" alt=""></div>
-      <div><img src="./image/plants image/sqr5.jpeg" alt=""></div>
       <div class="ver"><img src="./image/plants image/ver6.jpeg" alt=""></div>
-      <div class="ver"><img src="./image/plants image/ver2.jpeg" alt=""></div>
       <div class="land"><img src="./image/plants image/land3.jpeg" alt=""></div>
+      <div class="ver"><img src="./image/plants image/ver2.jpeg" alt=""></div>
       <div class="ver"><img src="./image/plants image/ver10.jpeg" alt=""></div>
       <div><img src="./image/plants image/sqr3.jpeg" alt=""></div>
       <div class="land"><img src="./image/plants image/huge_land.jpeg" alt=""></div>
+
       <div><img src="./image/plants image/sqr1.jpeg" alt=""></div>
-      <div class="land"><img src="./image/plants image/huge_land.jpeg" alt=""></div>
+      <div><img src="./image/plants image/sqr5.jpeg" alt=""></div>
+
     </div>
   </section>
 
@@ -176,37 +206,57 @@
     <div class="store_container">
       <div class="single_store">
         <div class="store_item">
-          <img src="./image/asset 7.jpeg" alt="">
-          <h5>Pramire</h5>
-          <p>৳-2000</p>
-          <button onclick="fun();" id="btn">Add to cart</button>
+          <form action="./cart/manage_cart.php" method="POST">
+            <img src="./image/asset 7.jpeg" alt="">
+            <h5>Pramire</h5>
+            <p>৳-2000</p>
+            <button type="submit" name="add_to_cart" onclick="location.href = './cart/cart.php'" id="btn">Add to
+              cart</button>
+            <input type="hidden" name="item_name" value="Pramire">
+            <input type="hidden" name="price" value="2000">
+          </form>
         </div>
 
       </div>
       <div class="single_store">
         <div class="store_item">
-          <img src="./image/asset 12.jpeg" alt="">
-          <h5>Ocean Poisonberry</h5>
-          <p>৳-400</p>
-          <button onclick="fun();" id="btn">Add to cart</button>
+          <form action="./cart/manage_cart.php" method="POST">
+            <img src="./image/asset 12.jpeg" alt="">
+            <h5>Ocean Poisonberry</h5>
+            <p>৳-400</p>
+            <button type="submit" name="add_to_cart" onclick="location.href = './cart/cart.php'" id="btn">Add to
+              cart</button>
+            <input type="hidden" name="item_name" value="Ocean Poisonberry">
+            <input type="hidden" name="price" value="400">
+          </form>
         </div>
 
       </div>
       <div class="single_store">
         <div class="store_item">
-          <img src="./image/asset 13.jpeg" alt="">
-          <h5>Bleeding Houseleek</h5>
-          <p>৳-1500</p>
-          <button onclick="fun();" id="btn">Add to cart</button>
+          <form action="./cart/manage_cart.php" method="POST">
+            <img src="./image/asset 13.jpeg" alt="">
+            <h5>Bleeding Houseleek</h5>
+            <p>৳-1500</p>
+            <button type="submit" name="add_to_cart" onclick="location.href = './cart/cart.php'" id="btn">Add to
+              cart</button>
+            <input type="hidden" name="item_name" value="Bleeding Houseleek">
+            <input type="hidden" name="price" value="1500">
+          </form>
         </div>
 
       </div>
       <div class="single_store">
         <div class="store_item">
-          <img src="./image/asset 14.jpeg" alt="">
-          <h5>Hammer Nightshade</h5>
-          <p>৳-2400</p>
-          <button onclick="fun();" id="btn">Add to cart</button>
+          <form action="./cart/manage_cart.php" method="POST">
+            <img src="./image/asset 14.jpeg" alt="">
+            <h5>Hammer Nightshade</h5>
+            <p>৳-2400</p>
+            <button type="submit" name="add_to_cart" onclick="location.href = './cart/cart.php'" id="btn">Add to
+              cart</button>
+            <input type="hidden" name="item_name" value="Hammer Nightshade">
+            <input type="hidden" name="price" value="2400">
+          </form>
         </div>
 
       </div>
@@ -216,37 +266,57 @@
     <div class="store_container">
       <div class="single_store">
         <div class="store_item">
-          <img src="./image/asset 15.jpeg" alt="">
-          <h5>Aching Thistle</h5>
-          <p>৳-1000</p>
-          <button onclick="fun();" id="btn">Add to cart</button>
+          <form action="./cart/manage_cart.php" method="POST">
+            <img src="./image/asset 15.jpeg" alt="">
+            <h5>Aching Thistle</h5>
+            <p>৳-1000</p>
+            <button type="submit" name="add_to_cart" onclick="location.href = './cart/cart.php'" id="btn">Add to
+              cart</button>
+            <input type="hidden" name="item_name" value="Aching Thistle">
+            <input type="hidden" name="price" value="1000">
+          </form>
         </div>
 
       </div>
       <div class="single_store">
         <div class="store_item">
-          <img src="./image/asset 16.jpeg" alt="">
-          <h5>Tiny Wineberry</h5>
-          <p>৳-200</p>
-          <button onclick="fun();" id="btn">Add to cart</button>
+          <form action="./cart/manage_cart.php" method="POST">
+            <img src="./image/asset 16.jpeg" alt="">
+            <h5>Tiny Wineberry</h5>
+            <p>৳-200</p>
+            <button type="submit" name="add_to_cart" onclick="location.href = './cart/cart.php'" id="btn">Add to
+              cart</button>
+            <input type="hidden" name="item_name" value="Tiny Wineberry">
+            <input type="hidden" name="price" value="200">
+          </form>
         </div>
 
       </div>
       <div class="single_store">
         <div class="store_item">
-          <img src="./image/asset 17.jpeg" alt="">
-          <h5>Ikririn</h5>
-          <p>৳-800</p>
-          <button onclick="fun();" id="btn">Add to cart</button>
+          <form action="./cart/manage_cart.php" method="POST">
+            <img src="./image/asset 17.jpeg" alt="">
+            <h5>Ikririn</h5>
+            <p>৳-800</p>
+            <button type="submit" name="add_to_cart" onclick="location.href = './cart/cart.php'" id="btn">Add to
+              cart</button>
+            <input type="hidden" name="item_name" value="Ikririn">
+            <input type="hidden" name="price" value="800">
+          </form>
         </div>
 
       </div>
       <div class="single_store">
         <div class="store_item">
-          <img src="./image/asset 18.jpeg" alt="">
-          <h5>Sheek</h5>
-          <p>৳-100</p>
-          <button onclick="fun();" id="btn">Add to cart</button>
+          <form action="./cart/manage_cart.php" method="POST">
+            <img src="./image/asset 18.jpeg" alt="">
+            <h5>Sheek</h5>
+            <p>৳-100</p>
+            <button type="submit" name="add_to_cart" onclick="location.href = './cart/cart.php'" id="btn">Add to
+              cart</button>
+            <input type="hidden" name="item_name" value="Sheek">
+            <input type="hidden" name="price" value="100">
+          </form>
         </div>
 
       </div>
@@ -254,37 +324,57 @@
     <div class="store_container">
       <div class="single_store">
         <div class="store_item">
-          <img src="./image/asset 19.jpeg" alt="">
-          <h5>Trehmanor</h5>
-          <p>৳-4000</p>
-          <button onclick="fun();" id="btn">Add to cart</button>
+          <form action="./cart/manage_cart.php" method="POST">
+            <img src="./image/asset 19.jpeg" alt="">
+            <h5>Trehmanor</h5>
+            <p>৳-4000</p>
+            <button type="submit" name="add_to_cart" onclick="location.href = './cart/cart.php'" id="btn">Add to
+              cart</button>
+            <input type="hidden" name="item_name" value="Trehmanor">
+            <input type="hidden" name="price" value="4000">
+          </form>
         </div>
 
       </div>
       <div class="single_store">
         <div class="store_item">
-          <img src="./image/asset 20.jpeg" alt="">
-          <h5>Chruffip</h5>
-          <p>৳-300</p>
-          <button onclick="fun();" id="btn">Add to cart</button>
+          <form action="./cart/manage_cart.php" method="POST">
+            <img src="./image/asset 20.jpeg" alt="">
+            <h5>Chruffip</h5>
+            <p>৳-300</p>
+            <button type="submit" name="add_to_cart" onclick="location.href = './cart/cart.php'" id="btn">Add to
+              cart</button>
+            <input type="hidden" name="item_name" value="Chruffip">
+            <input type="hidden" name="price" value="300">
+          </form>
         </div>
 
       </div>
       <div class="single_store">
         <div class="store_item">
-          <img src="./image/asset 21.jpeg" alt="">
-          <h5>Aithranfanor</h5>
-          <p>৳-780</p>
-          <button onclick="fun();" id="btn">Add to cart</button>
+          <form action="./cart/manage_cart.php" method="POST">
+            <img src="./image/asset 21.jpeg" alt="">
+            <h5>Aithranfanor</h5>
+            <p>৳-780</p>
+            <button type="submit" name="add_to_cart" onclick="location.href = './cart/cart.php'" id="btn">Add to
+              cart</button>
+            <input type="hidden" name="item_name" value="Aithranfanor">
+            <input type="hidden" name="price" value="780">
+          </form>
         </div>
 
       </div>
       <div class="single_store">
         <div class="store_item">
-          <img src="./image/asset 16.jpeg" alt="">
-          <h5>Ash Thistle</h5>
-          <p>৳-900</p>
-          <button onclick="fun();" id="btn">Add to cart</button>
+          <form action="./cart/manage_cart.php" method="POST">
+            <img src="./image/asset 16.jpeg" alt="">
+            <h5>Ash Thistle</h5>
+            <p>৳-900</p>
+            <button type="submit" name="add_to_cart" onclick="location.href = './cart/cart.php'" id="btn">Add to
+              cart</button>
+            <input type="hidden" name="item_name" value="Ash Thistle">
+            <input type="hidden" name="price" value="900">
+          </form>
         </div>
 
       </div>
@@ -389,7 +479,7 @@
 
     <div class="secondContact">
       <div class="newsletter_section">
-        <form action="./Home.html">
+        <form action="./Home.php">
           <div class="login_form">
 
 
@@ -459,6 +549,7 @@
           <li><a href="#">Terms of Use</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Buying Guildes</a></li>
+          <li><a href="./comment-system/comment.php">Leave a comment</a></li>
         </ul>
       </div>
 
@@ -487,5 +578,6 @@
 
 </body>
 <script type="text/javascript" src="./JS/main.js"></script>
+
 
 </html>

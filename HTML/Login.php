@@ -19,7 +19,7 @@
 
 <body>
 
-    <form action="../Home.html" onsubmit="return loginValidation()">
+    <form action="../php_action/loginAction.php" method="POST">
         <div class="login_form">
             <div class="logo"></div>
 
@@ -29,24 +29,24 @@
             <div class="input-fields">
                 <div class="email">
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                    <input type="text" placeholder="Enter your email" id="email" />
+                    <input type="text" name="l_username" placeholder="Enter your email" id="email" />
                 </div>
-                <span id="email_mess"></span>
+
                 <div class="password">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Enter your password" id="password" />
+                    <input type="password" name="l_pass" placeholder="Enter your password" id="password" />
                 </div>
-                <span id="pass_mess"></span>
+
             </div>
-            <button class="btn">LOGIN</button>
+            <a href="../Home.php"><input class="btn" type="submit" name="l_submit" value="Login"></a>
 
             <div class="link"><a href="#">
                     Forgot password?</a> or
-                <a href="../HTML/Registration.html">Signup</a>
+                <a href="../HTML/Registration.php">Signup</a>
             </div>
         </div>
     </form>
 </body>
-<script src="../JS/Login Validation.js"></script>
+
 
 </html>

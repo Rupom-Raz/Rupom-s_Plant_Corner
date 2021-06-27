@@ -1,3 +1,7 @@
+
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,24 +16,26 @@
     rel="stylesheet" />
   <!-- Favicon icon -->
   <link rel="icon" type="image/png" href="../image/favicon.png" />
+
   <!------------------- Font Awesome cdn link ---------------->
   <link rel="stylesheet" href="../css/font-awesome.min.css">
-  <!-- main css -->
-  <link rel="stylesheet" href="../css/services.css">
 
-  <title>Services</title>
+  <!-- main css -->
+  <link rel="stylesheet" href="../css/about.css">
+
+  <title>About</title>
 </head>
 
 <body>
   <!------------------- Navbar Start From Here ------------------------>
   <nav class="menu">
-    <a class="navbar-brand" href="../Home.html">Rupom's Plant Corner</a>
+    <a class="navbar-brand" href="../Home.php">Rupom's Plant Corner</a>
     <ol>
-      <li class="menu-item"><a href="../Home.html">Home</a></li>
-      <li class="menu-item"><a href="./About.html">About</a></li>
+      <li class="menu-item"><a href="../Home.php">Home</a></li>
+      <li class="menu-item"><a href="./About.php">About</a></li>
 
       <div class="dropdown">
-        <a class="dropbtn">Services
+        <a class="dropbtn" href="./Services.php">Services
           <i class="fa fa-caret-down"></i>
         </a>
         <div class="dropdown-content">
@@ -39,9 +45,25 @@
         </div>
       </div>
 
-      <li class="menu-item"><a href="./PricePlan.html">Price Plan</a></li>
-      <li class="menu-item"><a href="./contact.html">Contact</a></li>
-      <li class="menu-item"><a href="./Registration.html">Registration</a></li>
+      <li class="menu-item"><a href="./PricePlan.php">Price Plan</a></li>
+      <li class="menu-item"><a href="../crud/crud_index.php">Add Plants</a></li>
+      <li class="menu-item"><a href="./contact.php">Contact</a></li>
+      <li class="menu-item"><a href="./Registration.php">Registration</a></li>
+      <li class="menu-item"><a href="./HTML/Logout.php"><input
+        style="padding: 5px; color: #fff; background-color: #008e79; border: none; cursor: pointer;" type="button"
+        value="Logout" name="logout"></a></li>
+        <?php
+        $count = 0;
+        if(isset($_SESSION['cart'])){
+          $count = count($_SESSION['cart']);
+
+        }
+        
+        ?>
+  <i onclick="location.href = '../cart/cart.php'" class="fa fa-shopping-cart" aria-hidden="true"></i>
+  <span
+    onclick="location.href = './cart/cart.php'" id="cart_number"><?php echo $count ?></span>
+      
 
     </ol>
 
@@ -49,41 +71,19 @@
 
   <!----------------------------- Navbar end here--------------- -->
 
-  <!------------ Services section  start  here -------------->
-
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="services_container">
-      <div class="service1">
-        <div class="item">
-          <img src="../image/asset 8.png" alt="">
-          <h5>Free Shipping</h5>
-          <p>On order over ৳1500</p>
-        </div>
-
+  <!------------ About section  start  here -------------->
+  <section class=" about">
+    <div class="overlay"></div>
+    <div class="about_container">
+      <div class="owner">
+        <img src="../image/about.jpg" alt="">
       </div>
-      <div class="service2">
-        <div class="item">
-          <img src="../image/asset 9.png" alt="">
-          <h5>Support</h5>
-          <p>LIFE TIME SUPPORT </p>
-        </div>
-
-      </div>
-      <div class="service3">
-        <div class="item">
-          <img src="../image/asset 10.png" alt="">
-          <h5>Help Center</h5>
-          <p>Help All Aspects</p>
-        </div>
-
-      </div>
-      <div class="service4">
-        <div class="item">
-          <img src="../image/asset 11.png" alt="">
-          <h5>Contact With Us</h5>
-          <p>Phone:01123456258</p>
-        </div>
+      <div class="owner_words">
+        <h3>Who We Are</h3>
+        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+          essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+          containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+          PageMaker including versions...</p>
 
       </div>
     </div>
@@ -91,8 +91,7 @@
   </section>
 
 
-  <!------------ Services section  end here -------------->
-
+  <!------------ About section  end here -------------->
 
   <!----------------- Footer section start here --------------------------------------->
 
@@ -116,6 +115,7 @@
           <li><a href="#">Terms of Use</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Buying Guildes</a></li>
+          <li><a href="../comment-system/comment.php">Leave a comment</a></li>
         </ul>
       </div>
 

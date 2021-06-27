@@ -3,10 +3,6 @@
   margin: 0;
   padding: 0;
 }
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 a {
   text-decoration: none;
@@ -16,19 +12,19 @@ a {
 .menu {
   background-color: #202731;
   z-index: 1000;
-  height: 4rem;
+  height: 4.5rem;
+  padding: 0px 64px;
   position: sticky;
   top: 0;
+  margin-top: -22px;
 }
 ol {
   list-style-type: none;
-  margin-left: 450px;
+  margin-left: 300px;
 }
 .menu > ol {
-  max-height: 1000px;
   padding: 0 2rem;
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
@@ -46,7 +42,7 @@ ol {
 }
 .menu > ol > .menu-item {
   margin-top: 20px;
-  margin-left: 50px;
+  margin-left: 46px;
 }
 
 nav a {
@@ -106,12 +102,19 @@ nav a:hover {
 .fa-shopping-cart {
   color: #008e79;
   margin-top: 23px;
+  cursor: pointer;
 }
 #cart_number {
+  font-size: 15px;
   color: #008e79;
   font-weight: 700;
   margin-top: 22px;
   margin-left: 7px;
+  cursor: pointer;
+}
+.logout {
+  padding: 5px !important;
+  background: #008e79;
 }
 
 /* Navbar end here */
@@ -215,6 +218,36 @@ nav a:hover {
   transform: rotate(360deg);
   transition: all 1s;
 }
+@media (max-width: 600px) {
+  .home_container {
+    width: 100%;
+    height: 100%;
+    background-position: top;
+  }
+
+  .social {
+    margin-top: 180px !important;
+    margin-right: -162px;
+  }
+  .hero_section {
+    margin-top: 130px !important;
+  }
+  .hero_section > .hey {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.74);
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    line-height: 47px;
+  }
+  .hero_section > .profession {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .hero_section > p {
+    font-size: 14px !important;
+    margin-bottom: 28px !important;
+  }
+}
 /************************* side bar end here ********************/
 
 .hero_section {
@@ -233,6 +266,7 @@ nav a:hover {
 .name {
   font-family: "Pacifico", cursive;
   font-size: 60px;
+  text-transform: capitalize;
   font-weight: 900;
   color: #00a78e;
   line-height: 130px;
@@ -327,18 +361,18 @@ nav a:hover {
 
 /***************** Plants gellery start here *******************/
 .gallery_sec {
-  min-height: 500px;
+  min-height: 700px;
+  margin-top: 40px;
 }
 .gallery_sec h3 {
   margin-top: 20px;
-
   font-size: 3.5rem;
   text-align: center;
   color: #00a78e;
   text-transform: uppercase;
 }
 .gallery_container {
-  margin: 20px;
+  padding: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 5px;
@@ -768,6 +802,8 @@ sup,
   display: flex;
   flex-flow: row wrap;
   padding: 40px;
+  justify-content: center;
+  align-items: center;
 }
 .copyright {
   flex: 0.6;
@@ -789,9 +825,12 @@ sup,
   display: flex;
   flex-flow: row wrap;
   padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
 .footer_menu {
   flex: 0.6;
+  margin-left: 40px;
 }
 .footer_menu ul {
   display: flex;
@@ -805,7 +844,7 @@ sup,
 }
 .social_icon {
   flex: 0.4;
-  margin-right: 100px;
+  margin-right: 80px;
 }
 .social_icon i {
   color: #008e79;

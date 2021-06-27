@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,13 +27,13 @@
 <body>
     <!------------------- Navbar Start From Here ------------------------>
     <nav class="menu">
-        <a class="navbar-brand" href="../Home.html">Rupom's Plant Corner</a>
+        <a class="navbar-brand" href="../Home.php">Rupom's Plant Corner</a>
         <ol>
-            <li class="menu-item"><a href="../Home.html">Home</a></li>
-            <li class="menu-item"><a href="./About.html">About</a></li>
+            <li class="menu-item"><a href="../Home.php">Home</a></li>
+            <li class="menu-item"><a href="./About.php">About</a></li>
 
             <div class="dropdown">
-                <a class="dropbtn" href="./Services.html">Services
+                <a class="dropbtn" href="./Services.php">Services
                     <i class="fa fa-caret-down"></i>
                 </a>
                 <div class="dropdown-content">
@@ -39,9 +43,22 @@
                 </div>
             </div>
 
-            <li class="menu-item"><a href="./PricePlan.html">Price Plan</a></li>
-            <li class="menu-item"><a href="./contact.html">Contact</a></li>
-            <li class="menu-item"><a href="./Registration.html">Registration</a></li>
+            <li class="menu-item"><a href="./PricePlan.php">Price Plan</a></li>
+            <li class="menu-item"><a href="../crud/crud_index.php">Add Plants</a></li>
+            <li class="menu-item"><a href="./contact.php">Contact</a></li>
+            <li class="menu-item"><a href="./Registration.php">Registration</a></li>
+            <li class="menu-item"><a href="./HTML/Logout.php"><input
+                        style="padding: 5px; color: #fff; background-color: #008e79; border: none; cursor: pointer;"
+                        type="button" value="Logout" name="logout"></a></li>
+            <?php
+            $count = 0;
+            if (isset($_SESSION['cart'])) {
+                $count = count($_SESSION['cart']);
+            }
+            
+            ?>
+            <i onclick="location.href = './cart/cart.php'" class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span onclick="location.href = './cart/cart.php'" id="cart_number"><?php echo $count ?></span>
 
         </ol>
 
@@ -174,6 +191,7 @@
                     <li><a href="#">Terms of Use</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Buying Guildes</a></li>
+                    <li><a href="../comment-system/comment.php">Leave a comment</a></li>
                 </ul>
             </div>
 

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- My css -->
     <link rel="stylesheet" href="../css/Registration.css">
+
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" href="../image/favicon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -19,7 +20,7 @@
 
 <body>
 
-    <form action="../HTML/Login.html" onsubmit="return regValidation()">
+    <form action="../php_action/insert.php" method="POST">
         <div class="reg_form">
             <div class="logo"></div>
 
@@ -29,42 +30,37 @@
             <div class="input-fields">
                 <div class="fname">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <input type="text" placeholder="Enter your first name" id="fname" />
+                    <input type="text" name="r_name" placeholder="Enter your username" id="fname" />
                 </div>
-                <span id="fname_mess"></span>
-                <div class="lname">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <input type="text" placeholder="Enter your last name" id="lname" />
-                </div>
-                <span id="lname_mess"></span>
+
                 <div class="email">
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                    <input type="text" placeholder="Enter your email" id="email" />
+                    <input type="text" name="r_email" placeholder="Enter your email" id="email" />
                 </div>
-                <span id="email_mess"></span>
+
 
                 <div class="phone">
                     <i class="fa fa-phone-square" aria-hidden="true"></i>
-                    <input type="text" placeholder="Enter your phone number" id="phone" />
+                    <input type="text" name="r_phone" placeholder="Enter your phone number" id="phone" />
                 </div>
-                <span id="phone_mess"></span>
+
 
                 <div class="password">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Enter your password" id="password" />
+                    <input type="password" name="r_pass" placeholder="Enter your password" id="password" />
                 </div>
-                <span id="pass_mess"></span>
+
                 <div class="confirm_password">
                     <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Confirm your password" id="confirm_password" />
+                    <input type="password" name="r_con_pass" placeholder="Confirm your password" id="confirm_password" />
                 </div>
-                <span id="con_pass_mess"></span>
+                
             </div>
-            <button class="btn">SUBMIT</button>
+            <input class="btn" type="submit" name="r_submit" value="Register">
 
             <div class="link"><a href="#">
                     Forgot password?</a> already have an account?
-                <a href="./Login.html">SignIN</a>
+                <a href="./Login.php">SignIN</a>
             </div>
         </div>
     </form>

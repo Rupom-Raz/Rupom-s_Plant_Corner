@@ -99,6 +99,19 @@ nav a:hover {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.fa-shopping-cart {
+  color: #008e79;
+  margin-top: 23px;
+  cursor: pointer;
+}
+#cart_number {
+  font-size: 15px;
+  color: #008e79;
+  font-weight: 700;
+  margin-top: 22px;
+  margin-left: 7px;
+  cursor: pointer;
+}
 
 /***************************** Navbar end here ****************************/
 
@@ -178,6 +191,8 @@ nav a:hover {
 .footer_top {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
   padding: 40px;
 }
 .copyright {
@@ -199,10 +214,13 @@ nav a:hover {
 .footer_bottom {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
 }
 .footer_menu {
   flex: 0.6;
+  margin-left: 40px;
 }
 .footer_menu ul {
   display: flex;
@@ -217,7 +235,7 @@ nav a:hover {
 }
 .social_icon {
   flex: 0.4;
-  margin-right: 100px;
+  margin-right: 80px;
 }
 .social_icon i {
   color: #008e79;
